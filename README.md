@@ -161,3 +161,47 @@ Please open issues or contribute via pull requests on GitHub.
 
 This project is **not affiliated with the IPCC** and does not represent actual IPCC assessment work. It is a demonstration of AI capabilities for scientific synthesis. All AI-generated content requires expert validation before use in policy or decision-making contexts.
 
+
+---
+
+## 📁 Output Structure
+
+```
+output/production_release/
+├── openai_gpt5/
+│   ├── summary_for_policymakers.txt
+│   ├── technical_summary.txt
+│   ├── chapter_2_vulnerabilities_impacts_risks.txt
+│   ├── *_metadata.json (3 files with generation stats)
+│   ├── generation_summary.json
+│   └── AR7_PRODUCTION_OPENAI_GPT5.md (compiled book)
+├── google_gemini_pro/
+│   ├── [same structure as above]
+├── xai_grok3/
+│   ├── [same structure]
+├── anthropic_sonnet4/
+│   ├── [2 chapters - technical_summary timed out]
+├── mistral_mixtral/
+│   ├── [same structure]
+├── qwen_32b/
+│   ├── [same structure]
+├── deepseek_32b/
+│   ├── [2 chapters - technical_summary failed]
+├── pdfs/
+│   ├── AR7_PRODUCTION_OPENAI_GPT5.pdf
+│   ├── AR7_PRODUCTION_GOOGLE_GEMINI_PRO.pdf
+│   ├── AR7_PRODUCTION_XAI_GROK3.pdf
+│   ├── AR7_PRODUCTION_ANTHROPIC_SONNET4.pdf
+│   ├── AR7_PRODUCTION_MISTRAL_MIXTRAL.pdf
+│   ├── AR7_PRODUCTION_QWEN_32B.pdf
+│   └── AR7_PRODUCTION_DEEPSEEK_32B.pdf
+└── PRODUCTION_SUMMARY.json (master statistics)
+```
+
+**Total Generated**:
+- 18 chapters across 7 models
+- 48,354 words
+- 7 markdown compilations
+- 7 PDFs
+- Complete metadata and statistics
+
