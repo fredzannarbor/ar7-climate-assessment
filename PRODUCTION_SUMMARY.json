@@ -1,0 +1,249 @@
+{
+  "generated_at": "2025-11-08T11:29:36.369325",
+  "release_type": "production_v1",
+  "tier": "premium",
+  "chapters": [
+    "summary_for_policymakers",
+    "technical_summary",
+    "chapter_2_vulnerabilities_impacts_risks"
+  ],
+  "models": [
+    {
+      "model_id": "openai_gpt5",
+      "model_name": "openai/gpt-5",
+      "tier": "premium_production",
+      "total_chapters": 3,
+      "successful": 3,
+      "failed": 0,
+      "total_words": 15099,
+      "total_time": 499.06392765045166,
+      "avg_words": 5033.0,
+      "results": [
+        {
+          "success": true,
+          "chapter_key": "summary_for_policymakers",
+          "word_count": 4318,
+          "duration": 134.40108227729797,
+          "output_file": "output/production_release/openai_gpt5/summary_for_policymakers.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "technical_summary",
+          "word_count": 5996,
+          "duration": 165.38452625274658,
+          "output_file": "output/production_release/openai_gpt5/technical_summary.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "chapter_2_vulnerabilities_impacts_risks",
+          "word_count": 4785,
+          "duration": 199.2783191204071,
+          "output_file": "output/production_release/openai_gpt5/chapter_2_vulnerabilities_impacts_risks.txt"
+        }
+      ]
+    },
+    {
+      "model_id": "anthropic_sonnet4",
+      "model_name": "anthropic/claude-sonnet-4-20250514",
+      "tier": "premium_production",
+      "total_chapters": 3,
+      "successful": 2,
+      "failed": 1,
+      "total_words": 9898,
+      "total_time": 336.9687080383301,
+      "avg_words": 4949.0,
+      "results": [
+        {
+          "success": true,
+          "chapter_key": "summary_for_policymakers",
+          "word_count": 3828,
+          "duration": 133.8170828819275,
+          "output_file": "output/production_release/anthropic_sonnet4/summary_for_policymakers.txt"
+        },
+        {
+          "success": false,
+          "chapter_key": "technical_summary",
+          "error": "litellm.Timeout: AnthropicException - litellm.Timeout: Connection timed out after 600.0 seconds."
+        },
+        {
+          "success": true,
+          "chapter_key": "chapter_2_vulnerabilities_impacts_risks",
+          "word_count": 6070,
+          "duration": 203.1516251564026,
+          "output_file": "output/production_release/anthropic_sonnet4/chapter_2_vulnerabilities_impacts_risks.txt"
+        }
+      ]
+    },
+    {
+      "model_id": "xai_grok3",
+      "model_name": "xai/grok-3-latest",
+      "tier": "premium_production",
+      "total_chapters": 3,
+      "successful": 3,
+      "failed": 0,
+      "total_words": 5245,
+      "total_time": 182.33380222320557,
+      "avg_words": 1748.3333333333333,
+      "results": [
+        {
+          "success": true,
+          "chapter_key": "summary_for_policymakers",
+          "word_count": 1723,
+          "duration": 58.816450119018555,
+          "output_file": "output/production_release/xai_grok3/summary_for_policymakers.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "technical_summary",
+          "word_count": 1932,
+          "duration": 59.93090510368347,
+          "output_file": "output/production_release/xai_grok3/technical_summary.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "chapter_2_vulnerabilities_impacts_risks",
+          "word_count": 1590,
+          "duration": 63.58644700050354,
+          "output_file": "output/production_release/xai_grok3/chapter_2_vulnerabilities_impacts_risks.txt"
+        }
+      ]
+    },
+    {
+      "model_id": "google_gemini_pro",
+      "model_name": "gemini/gemini-2.5-pro",
+      "tier": "premium_production",
+      "total_chapters": 3,
+      "successful": 3,
+      "failed": 0,
+      "total_words": 10740,
+      "total_time": 236.3884859085083,
+      "avg_words": 3580.0,
+      "results": [
+        {
+          "success": true,
+          "chapter_key": "summary_for_policymakers",
+          "word_count": 3079,
+          "duration": 71.21277904510498,
+          "output_file": "output/production_release/google_gemini_pro/summary_for_policymakers.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "technical_summary",
+          "word_count": 4000,
+          "duration": 83.48401689529419,
+          "output_file": "output/production_release/google_gemini_pro/technical_summary.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "chapter_2_vulnerabilities_impacts_risks",
+          "word_count": 3661,
+          "duration": 81.69168996810913,
+          "output_file": "output/production_release/google_gemini_pro/chapter_2_vulnerabilities_impacts_risks.txt"
+        }
+      ]
+    },
+    {
+      "model_id": "deepseek_32b",
+      "model_name": "huggingface/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+      "tier": "premium_production",
+      "total_chapters": 3,
+      "successful": 2,
+      "failed": 1,
+      "total_words": 862,
+      "total_time": 139.35864806175232,
+      "avg_words": 431.0,
+      "results": [
+        {
+          "success": true,
+          "chapter_key": "summary_for_policymakers",
+          "word_count": 345,
+          "duration": 57.03682994842529,
+          "output_file": "output/production_release/deepseek_32b/summary_for_policymakers.txt"
+        },
+        {
+          "success": false,
+          "chapter_key": "technical_summary",
+          "error": "litellm.BadRequestError: HuggingfaceException - {\"code\":400, \"reason\":\"INVALID_REQUEST_BODY\", \"message\":\"max_tokens (current value: 35000) must be between 0 and 32000 \", \"metadata\":{}}"
+        },
+        {
+          "success": true,
+          "chapter_key": "chapter_2_vulnerabilities_impacts_risks",
+          "word_count": 517,
+          "duration": 82.32181811332703,
+          "output_file": "output/production_release/deepseek_32b/chapter_2_vulnerabilities_impacts_risks.txt"
+        }
+      ]
+    },
+    {
+      "model_id": "mistral_mixtral",
+      "model_name": "deepinfra/mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "tier": "premium_production",
+      "total_chapters": 3,
+      "successful": 3,
+      "failed": 0,
+      "total_words": 2530,
+      "total_time": 34.40355825424194,
+      "avg_words": 843.3333333333334,
+      "results": [
+        {
+          "success": true,
+          "chapter_key": "summary_for_policymakers",
+          "word_count": 952,
+          "duration": 12.523818016052246,
+          "output_file": "output/production_release/mistral_mixtral/summary_for_policymakers.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "technical_summary",
+          "word_count": 769,
+          "duration": 11.464673042297363,
+          "output_file": "output/production_release/mistral_mixtral/technical_summary.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "chapter_2_vulnerabilities_impacts_risks",
+          "word_count": 809,
+          "duration": 10.415067195892334,
+          "output_file": "output/production_release/mistral_mixtral/chapter_2_vulnerabilities_impacts_risks.txt"
+        }
+      ]
+    },
+    {
+      "model_id": "qwen_32b",
+      "model_name": "deepinfra/Qwen/QwQ-32B-Preview",
+      "tier": "premium_production",
+      "total_chapters": 3,
+      "successful": 3,
+      "failed": 0,
+      "total_words": 3980,
+      "total_time": 44.94112682342529,
+      "avg_words": 1326.6666666666667,
+      "results": [
+        {
+          "success": true,
+          "chapter_key": "summary_for_policymakers",
+          "word_count": 1324,
+          "duration": 15.413734912872314,
+          "output_file": "output/production_release/qwen_32b/summary_for_policymakers.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "technical_summary",
+          "word_count": 1427,
+          "duration": 15.795584917068481,
+          "output_file": "output/production_release/qwen_32b/technical_summary.txt"
+        },
+        {
+          "success": true,
+          "chapter_key": "chapter_2_vulnerabilities_impacts_risks",
+          "word_count": 1229,
+          "duration": 13.731806993484497,
+          "output_file": "output/production_release/qwen_32b/chapter_2_vulnerabilities_impacts_risks.txt"
+        }
+      ]
+    }
+  ],
+  "total_models": 7,
+  "total_chapters": 19,
+  "total_words": 48354
+}
