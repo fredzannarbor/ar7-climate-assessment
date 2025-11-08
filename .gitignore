@@ -1,0 +1,38 @@
+# Environment and API Keys
+.env
+.env.*
+*.key
+*_keys.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+
+# Large output files (keep summaries, exclude raw generation)
+output/**/raw_json_responses/
+output/**/*.txt
+!output/**/generation_summary.json
+!output/**/*_SUMMARY.json
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
