@@ -1,12 +1,22 @@
 # AR7 Multi-Model Climate Assessment Comparison
 
-A comprehensive framework for generating and evaluating AI-assisted climate assessment reports using multiple Large Language Models (LLMs), demonstrating transparent experimentation with AI involvement in scientific communication.
+A comprehensive framework for generating and evaluating draft climate assessment reports using multiple Large Language Models (LLMs), demonstrating transparent experimentation with AI involvement in scientific communication.
 
 ## Overview
 
-This project successfully generated the complete IPCC AR7 Working Group II climate assessment report (29 chapters, 330K+ words) using multiple AI models, with rigorous quality evaluation, fact-checking, and comparative analysis.
+This script generates complete drafts of the IPCC AR7 Working Group II climate assessment report (29 chapters, 330K+ words) using seven different AI models, then carries out a fact-checking loop, quality scoring, and multi-model comparison.
 
-**Key Achievement**: Demonstrated that AI models can produce high-quality, IPCC-style climate assessment content with proper evaluation frameworks in place.
+**Key Achievement**: Provides a framework for evaluating potential LLM contributions to climate assessment reviews.
+
+**Not in Scope**: 
+
+At present:
+
+- This project does not aim to replace human expertise in climate science.
+- This project does not carry out direct analysis of data or models.
+- This project does not create images, tables, charts, or visualizations.
+- No user acceptance testing has been conducted.
+- All generated content requires expert validation.
 
 ---
 
