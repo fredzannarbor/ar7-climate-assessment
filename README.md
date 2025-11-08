@@ -10,13 +10,10 @@ This script generates complete drafts of the IPCC AR7 Working Group II climate a
 
 **Not in Scope**: 
 
-At present:
-
 - This project does not aim to replace human expertise in climate science.
 - This project does not carry out direct analysis of data or models.
 - This project does not create images, tables, charts, or visualizations.
-- No user acceptance testing has been conducted.
-- All generated content requires expert validation.
+
 
 ---
 
