@@ -107,3 +107,47 @@ See `PREMIUM_TIER_FINAL_REPORT.md` and `ULTIMATE_FINAL_REPORT.md` for complete r
 **Documentation**: ✅ Comprehensive
 
 *Demonstrating transparent, evaluated, and reproducible AI-assisted scientific assessment generation for the benefit of global publics, science, and policy.*
+
+---
+
+## 👥 About
+
+### AI Lab for Book-Lovers
+
+This project is developed by the **AI Lab for Book-Lovers**, exploring innovative applications of AI in scientific communication and knowledge synthesis.
+
+🔗 **Visit**: [codexes.xtuff.ai](https://codexes.xtuff.ai)  
+📧 **Subscribe**: [AI Lab Substack](https://ailabforbooklovers.substack.com)
+
+<iframe src="https://ailabforbooklovers.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+
+### Project Lead
+
+**Fred Zannarbor** brings 25+ years of climate change analytics experience at ERIM, CIESIN/SEDAC (Columbia University), and ISciences, combining geospatial analysis with policy support.
+
+### Purpose
+
+This project demonstrates:
+1. **Technical capability** for AI-assisted climate assessment generation
+2. **Transparent evaluation** frameworks for quality assurance
+3. **Multi-model comparison** to understand AI strengths and limitations
+4. **Open methodology** for community validation and improvement
+
+**Note**: This is a **technical demonstration and feedback-seeking release**. We have demonstrated reliable text generation and evaluation capabilities. User acceptance testing and expert validation are needed next steps.
+
+### Feedback Welcome
+
+We seek input on:
+- Quality of AI-generated climate assessment content
+- Evaluation framework effectiveness
+- Appropriate use cases for AI assistance
+- Areas for improvement and enhancement
+
+Please open issues or contribute via pull requests on GitHub.
+
+---
+
+## 📜 Disclaimer
+
+This project is **not affiliated with the IPCC** and does not represent actual IPCC assessment work. It is a demonstration of AI capabilities for scientific synthesis. All AI-generated content requires expert validation before use in policy or decision-making contexts.
+
