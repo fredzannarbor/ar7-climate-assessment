@@ -15,7 +15,7 @@ This script generates complete drafts of the IPCC AR7 Working Group II climate a
 - This project does not create images, tables, charts, or visualizations.
 
 
-** 📜 Disclaimer**
+**Disclaimer**:
 
 This project is **not affiliated with the IPCC** and does not represent actual IPCC assessment work. It is a demonstration of AI capabilities for scientific synthesis. All AI-generated content requires expert validation before use in policy or decision-making contexts.
 
