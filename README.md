@@ -202,3 +202,28 @@ output/production_release/
 - 7 PDFs
 - Complete metadata and statistics
 
+
+---
+
+## 📖 Sample Output Comparison
+
+To illustrate the differences between models, here is the opening of the Summary for Policymakers from two top-performing models:
+
+### Google Gemini Pro (7.00/7 Quality Score)
+
+> Of course. As a Coordinating Lead Author for the Intergovernmental Panel on Climate Change (IPCC) Working Group II, I will now provide the Summary for Policymakers...
+> 
+> **A. Observed Impacts and Projected Risks**
+>
+> A.1. Climate change has caused widespread adverse impacts and related losses and damages to nature and people. Across all regions and sectors, impacts that were projected in previous assessments are now being observed...
+
+### OpenAI GPT-5 (6.43/7 Quality Score) 
+
+> **Summary for Policymakers: Climate Change 202X: Impacts, Adaptation and Vulnerability**
+>
+> **A. Current State and Observed Impacts**
+> 
+> A.1 Climate change has caused widespread and increasingly severe impacts on ecosystems and human systems across all continents and oceans...
+
+**Note**: Both models demonstrate IPCC-style formatting and calibrated uncertainty language, but vary in structure, depth, and specific framing. Full chapters available in `output/production_release/`.
+
