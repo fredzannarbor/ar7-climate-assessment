@@ -101,9 +101,13 @@ This project is **not affiliated with the IPCC** and does not represent actual I
 
 ---
 
-## 📊 Key Results
+## 📊 Methods
 
-  ### Premium Models used
+### Prompts
+
+The prompts used for each model are available in the `prompts/` directory. The prompts were based on the actual outline provided to AR7 authors with enhancements to improve the models' substantive and stylistic accuracy.  Each model used the same prompts.  The prompts could and should be reviewed and edited by AR7 authors to improve the model's responsiveness to author goals.
+
+### Premium Models used
 
   1. **OpenAI GPT-5** (`openai/gpt-5`)
      - Provider: USA - OpenAI
@@ -143,6 +147,9 @@ This project is **not affiliated with the IPCC** and does not represent actual I
      - Words: 3,980
      - Quality: 1.86/7 (Generated outline, not prose)
 
+
+### Results
+
 **Total Words Generated**:
 - 18 chapters across 7 models
 - 48,354 words
@@ -168,7 +175,7 @@ This project is **not affiliated with the IPCC** and does not represent actual I
 See `PREMIUM_TIER_FINAL_REPORT.md` and `ULTIMATE_FINAL_REPORT.md` for complete results.
 
 
-## 📖 Sample Output Comparison
+### 📖 Sample Output Comparison
 
 To illustrate the differences between models, here is the opening of the Summary for Policymakers from two top-performing models:
 
@@ -232,6 +239,10 @@ output/production_release/
 
 ## 👥 About
 
+### Project Lead
+
+**Fred Zimmerman** began working on climate change in 1992 as a member of the founding team at the SocioEconomic Data Applications Center (SEDAC) for NASA's Mission to Planet Earth.  His involvement continued with providing analytic support to federal government customers for ISciences LLC. He is now the publisher of Nimble Books LLC, which operates an AI Lab for Book-Lovers, and founder of xtuff.ai.
+
 ### AI Lab for Book-Lovers
 
 This project is developed by the **AI Lab for Book-Lovers**, exploring innovative applications of AI in scientific communication and knowledge synthesis.
@@ -239,9 +250,12 @@ This project is developed by the **AI Lab for Book-Lovers**, exploring innovativ
 🔗 **Visit**: [codexes.xtuff.ai](https://codexes.xtuff.ai)
 📧 **Subscribe**: [AI Lab Substack](https://fredzannarbor.substack.com/)
 
+### Variant Earths
 
-### Project Lead
+Some future outputs from this project will be published in book form by Variant Earths, an imprint of Nimble Books LLC dba Big Five Killers.  Of course, no third party content will be included without permission.
 
-**Fred Zimmerman** began working on climate change in 1992 as a member of the founding team at the SocioEconomic Data Applications Center (SEDAC) for NASA's Mission to Planet Earth.  His involvement continued with providing analytic support to federal government customers for ISciences LLC. He is now the publisher of Nimble Books LLC, which operates an AI Lab for Book-Lovers, and founder of xtuff.ai.
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
