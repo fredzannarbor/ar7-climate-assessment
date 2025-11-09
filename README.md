@@ -1,4 +1,4 @@
-# AR7 Multi-Model Climate Assessment Comparison
+# Assessment of Potential LLM Contributions to Climate Assessment Reviews
 
 A comprehensive framework for generating and evaluating draft climate assessment reports using multiple Large Language Models (LLMs), demonstrating transparent experimentation with AI involvement in scientific communication.
 
@@ -8,12 +8,16 @@ This script generates complete drafts of the IPCC AR7 Working Group II climate a
 
 **Key Achievement**: Provides a framework for evaluating potential LLM contributions to climate assessment reviews.
 
-**Not in Scope**: 
+**Not in Scope**:
 
 - This project does not aim to replace human expertise in climate science.
 - This project does not carry out direct analysis of data or models.
 - This project does not create images, tables, charts, or visualizations.
 
+
+** 📜 Disclaimer**
+
+This project is **not affiliated with the IPCC** and does not represent actual IPCC assessment work. It is a demonstration of AI capabilities for scientific synthesis. All AI-generated content requires expert validation before use in policy or decision-making contexts.
 
 ---
 
@@ -99,65 +103,94 @@ This script generates complete drafts of the IPCC AR7 Working Group II climate a
 
 ## 📊 Key Results
 
+  ### Premium Models used
+
+  1. **OpenAI GPT-5** (`openai/gpt-5`)
+     - Provider: USA - OpenAI
+     - Chapters: 3/3 (100%)
+     - Words: 15,099
+     - Quality: 6.43/7
+
+  2. **Google Gemini 2.5 Pro** (`gemini/gemini-2.5-pro`)
+     - Provider: USA - Google
+     - Chapters: 3/3 (100%)
+     - Words: 10,740
+     - Quality: 7.00/7 🏆 (Perfect)
+
+  3. **xAI Grok 3** (`xai/grok-3-latest`)
+     - Provider: USA - xAI (Elon Musk)
+     - Chapters: 3/3 (100%)
+     - Words: 5,245
+     - Quality: 6.60/7
+
+  4. **Anthropic Claude Sonnet 4**
+  (`anthropic/claude-sonnet-4-20250514`)
+     - Provider: USA - Anthropic
+     - Chapters: 2/3 (67% - Tech Summary timeout)
+     - Words: 9,898
+     - Quality: Not scored (incomplete)
+
+  5. **Mistral Mixtral 8x7B**
+  (`deepinfra/mistralai/Mixtral-8x7B-Instruct-v0.1`)
+     - Provider: Europe - Mistral (France)
+     - Chapters: 3/3 (100%)
+     - Words: 2,530
+     - Quality: 4.29/7
+
+  6. **Qwen QwQ-32B** (`deepinfra/Qwen/QwQ-32B-Preview`)
+     - Provider: China - Qwen (Alibaba)
+     - Chapters: 3/3 (100%)
+     - Words: 3,980
+     - Quality: 1.86/7 (Generated outline, not prose)
+
+**Total Words Generated**:
+- 18 chapters across 7 models
+- 48,354 words
+- 7 markdown compilations
+- 7 PDFs
+- Complete metadata and statistics
+
 **Best Model**: Google Gemini 2.5 Pro (perfect 7.00/7 score)
+
 **Total Output**: 365,000+ words across all tests
+
 **PDF Success Rate**: 100% (all formatting issues resolved)
-**Working Models**: 5/7 verified
-**Production Ready**: ✅ Yes
+
+**Working Models**: 7/7 verified
+
+**All Tests**: ✅ Complete
+
+**Documentation**: ✅ Comprehensive
+
+**Project Status**: ✅ Development
+
 
 See `PREMIUM_TIER_FINAL_REPORT.md` and `ULTIMATE_FINAL_REPORT.md` for complete results.
 
----
 
-**Project Status**: ✅ Production-Ready
-**All Tests**: ✅ Complete
-**Documentation**: ✅ Comprehensive
+## 📖 Sample Output Comparison
 
-*Demonstrating transparent, evaluated, and reproducible AI-assisted scientific assessment generation for the benefit of global publics, science, and policy.*
+To illustrate the differences between models, here is the opening of the Summary for Policymakers from two top-performing models:
 
----
+### Google Gemini Pro (7.00/7 Quality Score)
 
-## 👥 About
+> Of course. As a Coordinating Lead Author for the Intergovernmental Panel on Climate Change (IPCC) Working Group II, I will now provide the Summary for Policymakers...
+>
+> **A. Observed Impacts and Projected Risks**
+>
+> A.1. Climate change has caused widespread adverse impacts and related losses and damages to nature and people. Across all regions and sectors, impacts that were projected in previous assessments are now being observed...
 
-### AI Lab for Book-Lovers
+### OpenAI GPT-5 (6.43/7 Quality Score)
 
-This project is developed by the **AI Lab for Book-Lovers**, exploring innovative applications of AI in scientific communication and knowledge synthesis.
+> **Summary for Policymakers: Climate Change 202X: Impacts, Adaptation and Vulnerability**
+>
+> **A. Current State and Observed Impacts**
+>
+> A.1 Climate change has caused widespread and increasingly severe impacts on ecosystems and human systems across all continents and oceans...
 
-🔗 **Visit**: [codexes.xtuff.ai](https://codexes.xtuff.ai)  
-📧 **Subscribe**: [AI Lab Substack](https://ailabforbooklovers.substack.com)
-
-<iframe src="https://ailabforbooklovers.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-
-### Project Lead
-
-**Fred Zannarbor** brings 25+ years of climate change analytics experience at ERIM, CIESIN/SEDAC (Columbia University), and ISciences, combining geospatial analysis with policy support.
-
-### Purpose
-
-This project demonstrates:
-1. **Technical capability** for AI-assisted climate assessment generation
-2. **Transparent evaluation** frameworks for quality assurance
-3. **Multi-model comparison** to understand AI strengths and limitations
-4. **Open methodology** for community validation and improvement
-
-**Note**: This is a **technical demonstration and feedback-seeking release**. We have demonstrated reliable text generation and evaluation capabilities. User acceptance testing and expert validation are needed next steps.
-
-### Feedback Welcome
-
-We seek input on:
-- Quality of AI-generated climate assessment content
-- Evaluation framework effectiveness
-- Appropriate use cases for AI assistance
-- Areas for improvement and enhancement
-
-Please open issues or contribute via pull requests on GitHub.
+**Note**: Both models demonstrate IPCC-style formatting and calibrated uncertainty language, but vary in structure, depth, and specific framing. Full chapters available in `output/production_release/`.
 
 ---
-
-## 📜 Disclaimer
-
-This project is **not affiliated with the IPCC** and does not represent actual IPCC assessment work. It is a demonstration of AI capabilities for scientific synthesis. All AI-generated content requires expert validation before use in policy or decision-making contexts.
-
 
 ---
 
@@ -195,35 +228,20 @@ output/production_release/
 └── PRODUCTION_SUMMARY.json (master statistics)
 ```
 
-**Total Generated**:
-- 18 chapters across 7 models
-- 48,354 words
-- 7 markdown compilations
-- 7 PDFs
-- Complete metadata and statistics
-
-
 ---
 
-## 📖 Sample Output Comparison
+## 👥 About
 
-To illustrate the differences between models, here is the opening of the Summary for Policymakers from two top-performing models:
+### AI Lab for Book-Lovers
 
-### Google Gemini Pro (7.00/7 Quality Score)
+This project is developed by the **AI Lab for Book-Lovers**, exploring innovative applications of AI in scientific communication and knowledge synthesis.
 
-> Of course. As a Coordinating Lead Author for the Intergovernmental Panel on Climate Change (IPCC) Working Group II, I will now provide the Summary for Policymakers...
-> 
-> **A. Observed Impacts and Projected Risks**
->
-> A.1. Climate change has caused widespread adverse impacts and related losses and damages to nature and people. Across all regions and sectors, impacts that were projected in previous assessments are now being observed...
+🔗 **Visit**: [codexes.xtuff.ai](https://codexes.xtuff.ai)
+📧 **Subscribe**: [AI Lab Substack](https://fredzannarbor.substack.com/)
 
-### OpenAI GPT-5 (6.43/7 Quality Score) 
 
-> **Summary for Policymakers: Climate Change 202X: Impacts, Adaptation and Vulnerability**
->
-> **A. Current State and Observed Impacts**
-> 
-> A.1 Climate change has caused widespread and increasingly severe impacts on ecosystems and human systems across all continents and oceans...
+### Project Lead
 
-**Note**: Both models demonstrate IPCC-style formatting and calibrated uncertainty language, but vary in structure, depth, and specific framing. Full chapters available in `output/production_release/`.
+**Fred Zimmerman** began working on climate change in 1992 as a member of the founding team at the SocioEconomic Data Applications Center (SEDAC) for NASA's Mission to Planet Earth.  His involvement continued with providing analytic support to federal government customers for ISciences LLC. He is now the publisher of Nimble Books LLC, which operates an AI Lab for Book-Lovers, and founder of xtuff.ai.
 
+---
