@@ -1,4 +1,4 @@
-# Testin Potential LLM Contributions to Climate Assessment Reviews
+# Testing LLM Contributions to Climate Assessment Reviews
 
 A comprehensive framework for generating and evaluating draft climate assessment reports using multiple Large Language Models (LLMs), demonstrating transparent experimentation with AI involvement in scientific communication.
 
