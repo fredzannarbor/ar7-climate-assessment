@@ -4,7 +4,7 @@ A comprehensive framework for generating and evaluating draft climate assessment
 
 ## Overview
 
-This script generates complete drafts of the IPCC AR7 Working Group II climate assessment report (29 chapters, 330K+ words) using seven different AI models, then carries out a fact-checking loop, quality scoring, and multi-model comparison.
+These scripts generates complete drafts of the IPCC AR7 Working Group II climate assessment report (29 chapters, 330K+ words) using seven different AI models, then carries out a fact-checking loop, quality scoring, and multi-model comparison. Model parameters and prompts are fully documented and customizable.
 
 **Key Achievement**: Provides a framework for evaluating potential LLM contributions to climate assessment reviews.
 
@@ -13,7 +13,6 @@ This script generates complete drafts of the IPCC AR7 Working Group II climate a
 - This project does not aim to replace human expertise in climate science.
 - This project does not carry out direct analysis of data or models.
 - This project does not create images, tables, charts, or visualizations.
-
 
 **Disclaimer**:
 
