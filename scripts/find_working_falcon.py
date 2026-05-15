@@ -8,9 +8,13 @@ Test various Falcon model IDs to find working ones across different providers.
 from load_env import load_parent_env
 load_parent_env()
 
-import litellm
-litellm.drop_params = True
-
+try:
+    from shared.llm_router import completion as llm_completion
+except ImportError:
+    import sys as _sys
+    _sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parents[2]))
+    from shared.llm_router import completion as llm_completion
+# [removed] litellm config line (handled by shared.llm_router)
 FALCON_CANDIDATES = [
     # DeepInfra attempts
     ("deepinfra/tiiuae/falcon-7b-instruct", "DeepInfra - Old Falcon 7B Instruct"),
@@ -37,7 +41,7 @@ def test_model(model_id: str, description: str) -> dict:
     print(f"  Model ID: {model_id}")
 
     try:
-        response = litellm.completion(
+        response = llm_completion(
             model=model_id,
             messages=[{"role": "user", "content": TEST_PROMPT}],
             max_tokens=20,

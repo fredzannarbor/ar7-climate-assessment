@@ -15,10 +15,12 @@ from typing import Dict, List
 
 # Try to import LiteLLM
 try:
-    import litellm
-    LITELLM_AVAILABLE = True
+    from shared.llm_router import completion as llm_completion
+    from dotenv import load_dotenv
+    load_dotenv()
+    LLM_AVAILABLE = True
 except ImportError:
-    LITELLM_AVAILABLE = False
+    LLM_AVAILABLE = False
     print("WARNING: litellm not available. Fact-checking will be simulated.")
 
 
@@ -121,7 +123,7 @@ def fact_check_chapter(chapter_file: Path, model_name: str,
             content=content
         )
 
-        response = litellm.completion(
+        response = llm_completion(
             model=evaluator_model,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,

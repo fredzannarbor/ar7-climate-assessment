@@ -20,7 +20,7 @@ from codexes.core import llm_caller
 
 # Import cost tracking utilities
 try:
-    import litellm
+    from shared.llm_router import completion as llm_completion
     HAS_LITELLM = True
 except ImportError:
     HAS_LITELLM = False

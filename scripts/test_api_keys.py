@@ -13,10 +13,9 @@ from load_env import load_parent_env
 load_parent_env()
 
 try:
-    import litellm
-    litellm.drop_params = True  # Auto-drop unsupported params
+    from shared.llm_router import completion as llm_completion
 except ImportError:
-    print("ERROR: litellm not available")
+    print("ERROR: shared.llm_router not available")
     sys.exit(1)
 
 
@@ -42,7 +41,7 @@ def test_model(model_name: str, model_id: str) -> dict:
     print(f"{'='*60}")
 
     try:
-        response = litellm.completion(
+        response = llm_completion(
             model=model_id,
             messages=[{"role": "user", "content": TEST_PROMPT}],
             max_tokens=50,
@@ -155,7 +154,7 @@ def main():
         if r['error_type'] == "Authentication/API Key":
             print(f"⚠️  {r['model_name']}: Check API key configuration")
         elif r['error_type'] == "Parameter Restriction":
-            print(f"⚠️  {r['model_name']}: Use litellm.drop_params = True")
+            print(f"⚠️  {r['model_name']}: Check parameter compatibility")
 
     print()
     print("="*60)

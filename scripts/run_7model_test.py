@@ -23,9 +23,9 @@ sys.path.insert(0, str(Path(__file__).parent / "nimble" / "codexes-factory" / "s
 try:
     from nimble_llm_caller import llm_call_with_structured_output
 except ImportError:
-    import litellm
+    from shared.llm_router import completion as llm_completion
     def llm_call_with_structured_output(messages, model, **kwargs):
-        response = litellm.completion(model=model, messages=messages, **kwargs)
+        response = llm_completion(model=model, messages=messages, **kwargs)
         return response.choices[0].message.content
 
 # All 7 models (lite/flash tier)
