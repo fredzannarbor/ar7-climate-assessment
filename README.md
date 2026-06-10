@@ -1,78 +1,51 @@
 # Testing LLM Contributions to Climate Assessment Reviews
 
-A comprehensive framework for generating and evaluating draft climate assessment reports using multiple Large Language Models (LLMs), demonstrating transparent experimentation with AI involvement in scientific communication.
+A reproducible framework for generating and evaluating draft climate-assessment text using multiple Large Language Models (LLMs), as a transparent **experiment** in measuring AI-assisted scientific synthesis.
+
+> **Snapshot note (models & dates):** The experiment described here was **conducted in November 2025**; this write-up was **revised June 2026**. All model versions, quality scores, and cost figures are a **November-2025 snapshot**. Frontier models move quickly — these numbers describe how *those* models behaved on *that* date, not the current state of the art. Reproducing the experiment with current models would be expected to change the results.
 
 ## Overview
 
-These scripts generates complete drafts of the IPCC AR7 Working Group II climate assessment report (29 chapters, 330K+ words) using seven different AI models, then carries out a fact-checking loop, quality scoring, and multi-model comparison. Model parameters and prompts are fully documented and customizable.
+These scripts generate complete drafts written **in the style of** an IPCC AR7 Working Group II climate-assessment report (29 chapters, ~330K words) using seven different AI models, then carry out a fact-checking loop, quality scoring, and multi-model comparison. Model parameters and prompts are fully documented and customizable.
 
-**Key Achievement**: Provides a framework for evaluating potential LLM contributions to climate assessment reviews.
+**What this is**: an open, reproducible methods experiment for *measuring* how a panel of LLMs performs at long-form scientific synthesis under identical prompts, and for comparing models against one another. It is a measurement and comparison harness — **not** a production assessment system and **not** a substitute for the IPCC process.
+
+> **On the "IPCC author" voice:** When prompted with the AR7 author outline, some models adopt a first-person voice such as *"As a Coordinating Lead Author for the IPCC…"*. This is a **stylistic artifact of the prompt, not a claim of any affiliation, authority, or role.** No output here was produced by, reviewed by, or endorsed by the IPCC or any of its authors.
 
 **Not in Scope**:
 
-- This project does not aim to replace human expertise in climate science.
+- This project does not aim to replace human expertise in climate science, nor the IPCC assessment process.
 - This project does not carry out direct analysis of data or models.
 - This project does not create images, tables, charts, or visualizations.
 
 **Disclaimer**:
 
-This project is **not affiliated with the IPCC** and does not represent actual IPCC assessment work. It is a demonstration of AI capabilities for scientific synthesis. All AI-generated content requires expert validation before use in policy or decision-making contexts.
+This project is **not affiliated with the IPCC**, is not endorsed by it, and does not represent actual IPCC assessment work. "AR7" and "Working Group II" are used only to name the *target format* the models were asked to imitate. It is an experiment characterizing AI behavior on a hard synthesis task. **All AI-generated content is unvalidated** and must not be used in policy or decision-making contexts without expert review.
 
 ---
 
-## 🌍 Benefits to Global Publics, Science, and Policy
+## 🌍 Why run this experiment?
 
-### For Global Publics
+The point is **measurement**, not deployment. Open, reproducible benchmarking of LLM behavior on a genuinely hard, high-stakes synthesis task is useful regardless of whether AI ever belongs anywhere near a real assessment. We make no claim that AI should write climate assessments — we ask only: *if a model is given this task, what actually happens, and how do models differ?*
 
-**1. Democratization of Scientific Knowledge**
-- Makes complex climate science more accessible through AI-assisted synthesis
-- Enables rapid generation of assessment summaries in multiple languages
-- Reduces time from research to public-facing reports from years to hours
+**What the experiment can contribute:**
 
-**2. Transparency and Trust**
-- **Open evaluation frameworks** show exactly how AI content is generated and validated
-- **Multi-model comparison** reveals strengths and weaknesses of different approaches
-- **Fact-checking results** publicly document accuracy and limitations
-- **Quality scoring** provides objective metrics for assessment reliability
+- **A transparent comparison harness.** Identical prompts across seven models make strengths and failure modes directly comparable, with all prompts, scoring criteria, and model IDs published.
+- **Documented failure modes.** Fact-checking and quality scoring surface *where* and *how* these models go wrong on scientific synthesis (e.g. fabricated specifics, weak citation behavior, calibration of uncertainty language) — useful evidence for anyone studying LLM reliability.
+- **An empirical, slightly counter-intuitive finding** (see Results): under these conditions, **longer output did not mean better output** — the more verbose model produced markedly more factual errors than a more concise one. This is the kind of measurable behavior worth sharing with the AI-for-science community.
 
-**3. Accelerated Climate Communication**
-- Faster synthesis of emerging research for policymakers
-- Ability to quickly update assessments as new evidence emerges
-- Multiple perspectives (USA, Europe, China) for global representation
+**What it explicitly does NOT contribute** (and we want to be loud about this):
 
-### For Science
+- It is **not** a path to "democratizing" or "accelerating" climate assessment. The IPCC process is deliberative, expert-governed, and accountable; nothing here substitutes for that.
+- The cost of running these models is trivial (single-digit dollars), but **cheap to generate is not the same as cheap to trust.** The expensive, irreplaceable part — expert validation — is exactly what AI does not provide.
+- None of the output is validated, and unvalidated synthesis has *negative* value in a policy context.
 
-**1. Research Acceleration**
-- **Rapid literature synthesis**: AI can process thousands of papers to identify key findings
-- **Consistency checking**: Multi-model generation reveals contradictions in literature
-- **Gap identification**: Comparison highlights areas needing more research
+### Transparency the experiment does provide
 
-**2. Methodological Innovation**
-- **Reproducible assessment pipelines**: Exact same prompts generate comparable outputs
-- **Quality metrics**: Objective evaluation of synthesis quality (1-7 Likert scales)
-- **Citation requirements**: V2 prompts enforce evidence-based claims with full references
-
-**3. Enhanced Peer Review**
-- AI-generated drafts provide starting points for expert refinement
-- **Fact-checking frameworks** catch errors before human review
-- **Cross-model validation**: Different models check each other's work
-
-### For Policy
-
-**1. Timely Decision Support**
-- **Near-instant synthesis** of latest research for urgent policy questions
-- **Scenario exploration**: Quick generation of assessment variants for different policy contexts
-- **Evidence accessibility**: Direct citations link claims to peer-reviewed sources
-
-**2. Improved Assessment Quality**
-- **Objective quality metrics** (accuracy, IPCC compliance, comprehensiveness)
-- **Multi-perspective analysis**: Models from different providers/nations offer diverse viewpoints
-- **Consistency**: Automated generation ensures uniform style and structure
-
-**3. Cost Efficiency**
-- **Reduced assessment costs**: $5-20 vs millions for traditional IPCC assessments
-- **Faster updates**: Weeks instead of years for assessment cycles
-- **Resource allocation**: Frees human experts for high-value validation and refinement
+- **Open evaluation framework** — exactly how content is generated and scored is public (see `prompts/`).
+- **Multi-model comparison** — strengths/weaknesses are reported side by side, including the models that failed.
+- **Fact-checking results** — errors are documented rather than hidden.
+- **Reproducible pipeline** — same prompts, same model IDs, same scoring rubric.
 
 ---
 
@@ -147,46 +120,45 @@ The prompts used for each model are available in the `prompts/` directory. The p
      - Quality: 1.86/7 (Generated outline, not prose)
 
 
-### Results
+### Results (November 2025 snapshot)
 
-**Total Words Generated**:
-- 18 chapters across 7 models
+**Premium-tier run** (7 models × 3 chapters: Summary for Policymakers, Technical Summary, Chapter 2):
+- 18 chapters generated successfully across 7 models
 - 48,354 words
-- 7 markdown compilations
-- 7 PDFs
-- Complete metadata and statistics
+- Best per the automated evaluator: **Google Gemini 2.5 Pro, 7.00/7**
 
-**Best Model**: Google Gemini 2.5 Pro (perfect 7.00/7 score)
+**Earlier flash/lite-tier run** (3 models × 29 chapters) produced the full ~330K-word body and is where the headline empirical finding comes from:
 
-**Total Output**: 365,000+ words across all tests
+- **Longer ≠ better.** The most verbose model (Claude Haiku 4.5, ~160K words) was flagged with **~2.8× more fact-check issues** (64 vs 23) than a more concise, higher-scoring model (Gemini Flash, ~141K words, 6.02/7) on the same chapters.
+- **Citation behavior was the universal weak point** across all models under the V1 prompts (3.86–4.57/7); the V2 prompts add mandatory-citation requirements as a follow-up to test.
 
-**PDF Success Rate**: 100% (all formatting issues resolved)
+**Two caveats on these numbers:**
 
-**Working Models**: 7/7 verified
+1. Scores come from a **single LLM judge** (Gemini 2.5 Pro). LLM-as-judge is known to be biased; it is used here as a *relative, reproducible* signal, not ground truth. No human expert validated any output.
+2. These are **November-2025 model versions**; results would differ with current models.
 
 **All Tests**: ✅ Complete
 
-**Documentation**: ✅ Comprehensive
+> **Note on artifacts in this repo:** code, prompts, scoring rubrics, and summary statistics are included. The **raw generated chapters and PDFs are intentionally not committed** (see `.gitignore`) — we publish the *method and the measurements*, not unvalidated AI drafts that could be mistaken for real assessment text. They are regenerable from the prompts and scripts; see `REPRODUCE.md`.
 
-**Project Status**: ✅ Development
-
-
-See `PREMIUM_TIER_FINAL_REPORT.md` and `ULTIMATE_FINAL_REPORT.md` for complete results.
+For the consolidated write-up, see **`METHODS_AND_FINDINGS.md`**. Superseded prior reports are kept in `reports/archive/`.
 
 
 ### 📖 Sample Output Comparison
 
 To illustrate the differences between models, here is the opening of the Summary for Policymakers from two top-performing models:
 
-### Google Gemini Pro (7.00/7 Quality Score)
+> ⚠️ **Read these as model behavior, not as climate statements.** The excerpts below are *unvalidated AI output* reproduced to show stylistic differences between models. The "Coordinating Lead Author" framing in the first excerpt is a **prompt artifact** (the model role-playing the assigned outline), **not** a claim of any IPCC role. Do not cite these passages as fact.
 
-> Of course. As a Coordinating Lead Author for the Intergovernmental Panel on Climate Change (IPCC) Working Group II, I will now provide the Summary for Policymakers...
+### Google Gemini Pro (7.00/7 evaluator score)
+
+> Of course. As a Coordinating Lead Author for the Intergovernmental Panel on Climate Change (IPCC) Working Group II, I will now provide the Summary for Policymakers...  *(← prompt-induced role-play voice; not an actual IPCC role)*
 >
 > **A. Observed Impacts and Projected Risks**
 >
 > A.1. Climate change has caused widespread adverse impacts and related losses and damages to nature and people. Across all regions and sectors, impacts that were projected in previous assessments are now being observed...
 
-### OpenAI GPT-5 (6.43/7 Quality Score)
+### OpenAI GPT-5 (6.43/7 evaluator score)
 
 > **Summary for Policymakers: Climate Change 202X: Impacts, Adaptation and Vulnerability**
 >
@@ -194,7 +166,7 @@ To illustrate the differences between models, here is the opening of the Summary
 >
 > A.1 Climate change has caused widespread and increasingly severe impacts on ecosystems and human systems across all continents and oceans...
 
-**Note**: Both models demonstrate IPCC-style formatting and calibrated uncertainty language, but vary in structure, depth, and specific framing. Full chapters available in `output/production_release/`.
+**Note**: Both models imitate IPCC-style formatting and calibrated uncertainty language, but vary in structure, depth, and framing. Raw chapters are not committed (see the artifacts note above) but regenerate deterministically from `prompts/` per `REPRODUCE.md`.
 
 ---
 
@@ -233,6 +205,16 @@ output/production_release/
 │   └── AR7_PRODUCTION_DEEPSEEK_32B.pdf
 └── PRODUCTION_SUMMARY.json (master statistics)
 ```
+
+(The `*.txt`/`*.pdf` leaves above are produced by a run but are gitignored; this layout documents what a reproduction will create locally.)
+
+---
+
+## Reproducibility & dependencies
+
+See **`REPRODUCE.md`** for exact commands, required API keys, and what is/isn't committed.
+
+> **Note on `litellm`:** the generation scripts in this repo call models through `litellm` **as the experiment was run in November 2025**. This is preserved *as-run* for reproducibility and is **not a current recommendation** — Nimble Books' own stack has since moved off `litellm` to native provider SDKs. Treat the dependency list here as a historical snapshot, and pin/verify any package before installing.
 
 ---
 

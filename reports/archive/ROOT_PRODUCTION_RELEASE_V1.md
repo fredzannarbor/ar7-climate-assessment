@@ -1,3 +1,7 @@
+> **ARCHIVED / SUPERSEDED (June 2026).** Former root-level report from the November 2025 experiment. Note the internal date error ("Release Date: 2025-01-08"): the experiment was actually conducted **November 2025**. Superseded by `METHODS_AND_FINDINGS.md` in the repo root. Kept for provenance.
+
+---
+
 # AR7 Multi-Model Climate Assessment - Production Release v1.0
 
 **Release Date**: 2025-01-08

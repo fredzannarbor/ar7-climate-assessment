@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{titlesec}
+
+\title{Verbosity Without Veracity: A Reproducible Multi-Model Probe of\\
+Large Language Models on Long-Form Scientific Synthesis}
+
+\author{Fred Zimmerman\\
+\small AI Lab for Book-Lovers, Nimble Books LLC\\
+\small \texttt{wfz@nimblebooks.com}}
+
+\date{Experiment conducted November 2025; manuscript June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report a small, fully reproducible probe of how a panel of seven large language
+models (LLMs) behaves when asked to draft long-form scientific-assessment text
+\emph{in the style of} an Intergovernmental Panel on Climate Change (IPCC)
+Working Group~II report. Using a single fixed prompt set, identical task definitions,
+and a uniform LLM-judge rubric, we generated up to 29 chapters per model
+($\sim$330k words in the largest configuration) and scored each for quality and
+factual issues. Our central observation is counter-intuitive and policy-relevant:
+\textbf{output length was negatively associated with factual reliability.} The most
+verbose model produced roughly $2.8\times$ as many flagged fact-check issues as a more
+concise, higher-scoring model on matched chapters, while scoring marginally lower
+overall. Separately, citation grounding was uniformly weak across all models under
+non-citation-enforcing prompts. We frame these results strictly as a
+\emph{measurement of model behavior}, not as a proposal to automate scientific
+assessment, and we discuss threats to validity---chiefly the single-LLM-judge
+design---at length. All prompts, scoring code, and rubrics are released. This is a
+negative-leaning, hygiene-oriented contribution intended to caution against
+length-as-quality heuristics in AI-for-science pipelines. This work is not
+affiliated with or endorsed by the IPCC.
+\end{abstract}
+
+\section{Introduction}
+LLMs are increasingly proposed as accelerators for scientific synthesis: literature
+review, drafting, and summarization. Whether they \emph{should} be used in any
+high-stakes assessment setting is a separate normative question we do not address;
+the IPCC process is deliberative, expert-governed, and accountable, and nothing here
+substitutes for it. Instead we ask a narrow empirical question: \emph{given} the task
+of drafting assessment-style text from a published author outline, how do current
+models behave, and how do they differ under identical conditions?
+
+This question matters because failure modes in long-form synthesis are not well
+characterized relative to short-answer benchmarks. Hallucination and unfaithfulness
+are documented for summarization and QA \citep{maynez2020faithfulness, ji2023survey,
+lin2021truthfulqa}, and holistic evaluation efforts have mapped model behavior across
+many axes \citep{liang2022holistic}. We add a focused, reproducible data point on the
+specific regime of multi-thousand-word, citation-bearing scientific prose.
+
+\section{Method}
+\paragraph{Task.} Models were prompted with the published IPCC AR7 WGII author outline
+and asked to draft chapters (Summary for Policymakers, Technical Summary, and
+assessment chapters). ``AR7 / Working Group~II'' names only the \emph{target format}
+the models imitate. Some models adopt a first-person ``Coordinating Lead Author''
+voice; this is a prompt artifact, not a claim of any role.
+
+\paragraph{Models.} Two tiers, all November-2025 versions. \emph{Premium tier:} seven
+models (OpenAI GPT-5, Google Gemini~2.5~Pro, xAI Grok~3, Anthropic Claude~Sonnet~4,
+Mistral Mixtral~8x7B, Qwen QwQ-32B, DeepSeek-32B) $\times$ 3 chapters.
+\emph{Flash/lite tier:} three models (Gemini~2.5~Flash, Claude~Haiku~4.5,
+GPT-4o-mini) $\times$ 29 chapters (full body), which supplies the headline finding.
+
+\paragraph{Evaluation.} A single LLM judge (Gemini~2.5~Pro) applied (i) a multi-dimensional
+1--7 Likert rubric (accuracy, style fidelity, uncertainty-language calibration,
+synthesis, comprehensiveness, citation quality) and (ii) a fact-check pass categorizing
+issues as critical / major / minor. We deliberately note that LLM-as-judge is a biased
+instrument \citep{zheng2023judging, panickssery2024llm} and treat its scores as a
+relative, reproducible signal rather than ground truth (Section~\ref{sec:threats}).
+
+\section{Results (November 2025 snapshot)}
+\subsection{Length did not buy reliability}
+On the full 29-chapter run, scored on matched chapters:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Model & Words & Quality (1--7) & Fact-check issues \\
+\midrule
+Gemini 2.5 Flash & $\sim$141k & 6.02 & 23 \\
+Claude Haiku 4.5 & $\sim$160k & 5.81 & 64 \\
+GPT-4o-mini      & $\sim$29k  & 3.19 & 16 (insufficient content) \\
+\bottomrule
+\end{tabular}
+\caption{The most verbose model (Haiku, $+13\%$ words) drew $\sim$2.8$\times$ more
+flagged issues while scoring slightly lower. The shortest model failed for the
+opposite reason---too little substance to assess.}
+\end{table}
+
+A plausible mechanism is a \emph{specificity paradox}: longer prose introduces more
+concrete claims (dates, magnitudes) and thus more surface area for unsupported
+assertions---consistent with faithfulness findings in summarization
+\citep{maynez2020faithfulness}. The practical implication is that word-count or
+length-reward is a poor proxy for synthesis quality.
+
+\subsection{Citation grounding was uniformly weak}
+Under prompts that did not mandate citations, citation-quality scores were low
+($\approx$3.86--4.57/7) for \emph{every} model: fluent, well-structured, style-faithful
+prose that was largely untethered to verifiable references. This is the most
+policy-relevant failure mode and motivates a citation-enforcing prompt variant
+(released for follow-up).
+
+\subsection{Premium tier}
+In the 3-chapter premium run the evaluator ranked Gemini~2.5~Pro highest (7.00/7),
+with GPT-5 and Grok~3 close behind; smaller open models produced outlines or thin
+prose, and two models timed out on the longest chapter---itself a long-context
+reliability signal.
+
+\section{Threats to validity}\label{sec:threats}
+\textbf{Single LLM judge.} Scores derive from one model acting as judge; LLM judges
+exhibit self-preference and verbosity biases \citep{panickssery2024llm,
+zheng2023judging}. Scores are relative, not authoritative.
+\textbf{No human expert validation.} No climate scientist reviewed any output.
+\textbf{Snapshot.} Results are Nov-2025 model versions and will not replicate on
+current models. \textbf{Small premium $n$.} Three chapters per model is directional.
+\textbf{Prompt sensitivity.} Results may shift with different prompts; ours are public.
+
+\section{Conclusion}
+We contribute a reproducible harness and one robust, slightly counter-intuitive
+observation: under our conditions, verbosity correlated with \emph{more} factual
+errors, and citation grounding was uniformly weak. We make no claim that AI can or
+should write scientific assessments; we claim only that, if asked, current models
+fail in measurable, characterizable ways. We release all prompts, code, and rubrics
+and invite alternative evaluators and human spot-checks.
+
+\paragraph{Data and code.}
+\url{https://github.com/fredzannarbor/ar7-climate-assessment}
+
+\paragraph{Disclaimer.}
+Not affiliated with or endorsed by the IPCC. All model output is unvalidated.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

@@ -1,3 +1,7 @@
+> **ARCHIVED / SUPERSEDED (June 2026).** This is an internal working report from the November 2025 experiment. It contains exploratory framing and some over-claims (e.g. "production-ready", cost comparisons to the IPCC process) that the project **no longer endorses**. The canonical, humble write-up is `METHODS_AND_FINDINGS.md` in the repo root. Kept here only for provenance.
+
+---
+
 # AR7 Premium Tier Test - Final Report
 
 **Test Completed**: 2025-11-08 9:45 AM PST

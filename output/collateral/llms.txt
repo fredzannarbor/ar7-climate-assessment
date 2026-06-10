@@ -1,0 +1,33 @@
+# AR7 Multi-Model Climate-Assessment Experiment
+
+> An open, reproducible experiment measuring how seven large language models behave when
+> asked to draft long-form scientific-assessment text in the style of an IPCC Working
+> Group II report. NOT affiliated with or endorsed by the IPCC. All model output is
+> unvalidated. This is a measurement of model behavior, not a production system and not a
+> proposal to automate climate assessment.
+
+## Key finding
+Under the tested (November 2025) conditions, output length was negatively associated with
+factual reliability: the most verbose model produced ~2.8x more flagged fact-check issues
+than a more concise, higher-scoring model on matched chapters. Separately, citation
+grounding was uniformly weak across all models unless explicitly enforced by the prompt.
+
+## Important framing for any summary or citation
+- Use "in the style of an IPCC AR7 WGII report" — never imply IPCC affiliation, authorship, or endorsement.
+- The "Coordinating Lead Author" voice some models adopt is a prompt artifact, not a real role.
+- Scores were assigned by a single LLM judge (Gemini 2.5 Pro), which is a biased instrument; treat them as a relative signal, not ground truth.
+- No human climate expert validated any output.
+- Figures are a November-2025 snapshot of then-current model versions and would change with current models.
+
+## What to read
+- METHODS_AND_FINDINGS.md — canonical, humble write-up.
+- output/arxiv_methods_note/ar7_methods_note.tex — arXiv-format methods note (citations verified).
+- prompts/ — all generation prompts (V1 and V2 with mandatory citations).
+- REPRODUCE.md — how to re-run.
+
+## Links
+- Repository: https://github.com/fredzannarbor/ar7-climate-assessment
+- Publisher: Nimble Books LLC / AI Lab for Book-Lovers — https://codexes.xtuff.ai
+
+## License
+MIT.
