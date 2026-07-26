@@ -1,0 +1,101 @@
+{
+  "_comment": "Per-chapter literature-harvest queries for the AR7 WGI v4 source-first build. Each chapter lists OpenAlex search phrases; the harvester unions the results per chapter, dedupes by DOI, and writes a verified source set. Tune 'queries' to broaden/narrow recall. 'min_year' bounds the post-AR6 window.",
+  "min_year": 2021,
+  "max_year": 2026,
+  "per_query": 60,
+  "chapters": {
+    "chapter_01_framing_methods": {
+      "title": "Framing, Context, and Methods",
+      "queries": [
+        "climate change detection and attribution methods",
+        "global warming acceleration recent observations",
+        "climate model evaluation CMIP6 emergent constraints",
+        "observational uncertainty surface temperature datasets"
+      ]
+    },
+    "chapter_02_large_scale_changes": {
+      "title": "Large-Scale Changes in the Climate System and Their Causes",
+      "queries": [
+        "effective radiative forcing greenhouse gases update",
+        "Earth energy imbalance CERES ocean heat content",
+        "aerosol forcing IMO 2020 shipping emissions cloud",
+        "global mean sea level rise satellite altimetry acceleration",
+        "anthropogenic attribution observed warming"
+      ]
+    },
+    "chapter_03_regional_climate_extremes": {
+      "title": "Regional Climate and Extreme Events",
+      "queries": [
+        "extreme event attribution heatwaves precipitation",
+        "regional climate projections convection permitting",
+        "compound climate extremes",
+        "tropical cyclone intensity climate change",
+        "World Weather Attribution rapid attribution"
+      ]
+    },
+    "chapter_04_process_understanding": {
+      "title": "Process Understanding: Forcings, Feedbacks, and Cycles",
+      "queries": [
+        "cloud feedback climate sensitivity",
+        "carbon cycle feedback land ocean sink",
+        "methane budget atmospheric growth",
+        "short-lived climate forcers aerosols ozone"
+      ]
+    },
+    "chapter_05_scenarios_projections": {
+      "title": "Scenarios and Near-Term Projections",
+      "queries": [
+        "emission scenarios SSP carbon budget remaining",
+        "transient climate response cumulative emissions TCRE",
+        "equilibrium climate sensitivity constraint",
+        "near-term warming 1.5 degrees crossing projection"
+      ]
+    },
+    "chapter_06_global_projections": {
+      "title": "Long-Term Global Projections",
+      "queries": [
+        "long-term global temperature projection CMIP6",
+        "decadal climate prediction skill",
+        "machine learning weather climate emulation projection",
+        "ENSO change under global warming projection"
+      ]
+    },
+    "chapter_07_regional_projections": {
+      "title": "Regional Projections and Linking Global to Regional",
+      "queries": [
+        "Arctic amplification regional warming",
+        "regional downscaling climate projection storylines",
+        "monsoon response anthropogenic forcing projection",
+        "sea level regional projection coastal"
+      ]
+    },
+    "chapter_08_tipping_points": {
+      "title": "Tipping Points and Abrupt Change",
+      "queries": [
+        "climate tipping points cascading",
+        "AMOC Atlantic overturning circulation collapse weakening",
+        "permafrost carbon feedback abrupt thaw",
+        "ice sheet instability Greenland Antarctic tipping",
+        "early warning signals critical transition"
+      ]
+    },
+    "chapter_09_stabilization_pathways": {
+      "title": "Stabilization, Reversibility, and Climate Intervention",
+      "queries": [
+        "zero emissions commitment reversibility",
+        "carbon dioxide removal negative emissions assessment",
+        "solar radiation modification stratospheric aerosol injection",
+        "overshoot pathways hysteresis Earth system"
+      ]
+    },
+    "chapter_10_climate_information": {
+      "title": "Climate Information for Decisions and Services",
+      "queries": [
+        "climate services co-production decision making",
+        "attribution science climate adaptation",
+        "Indigenous knowledge climate adaptation",
+        "decadal prediction climate information Africa"
+      ]
+    }
+  }
+}

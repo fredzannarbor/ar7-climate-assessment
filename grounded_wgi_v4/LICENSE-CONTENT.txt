@@ -1,0 +1,22 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+Copyright (c) 2026 Fred Zimmerman / Nimble Books LLC
+
+The GENERATED PROSE and COMPILED PDF in this directory (grounded_wgi_v4/) — the
+chapter drafts, Summary for Policymakers, Technical Summary, front/back matter, and
+ar7_v4_vol1_2nd_edition.pdf — are licensed under CC BY-NC 4.0:
+
+  https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+You are free to SHARE and ADAPT this material for NON-COMMERCIAL purposes, provided
+you give appropriate credit. This grant covers THIS REPOSITORY COPY ONLY. It is not
+a public-domain dedication. Commercial rights are reserved by the copyright holder,
+including the separately published all-rights-reserved trade edition
+(ISBN 979-8-2595-0680-0).
+
+The PIPELINE CODE in this directory (harvest_sources.py, write_grounded.py,
+verify_citations.py) is licensed separately under the repository's MIT license, not
+this CC BY-NC license.
+
+Genuine IPCC reports are copyrighted (© IPCC / Cambridge University Press) and are not
+covered, reproduced, or derived by this work. See COPYRIGHT.md.

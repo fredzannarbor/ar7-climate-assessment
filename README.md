@@ -4,6 +4,27 @@ A reproducible framework for generating and evaluating draft climate-assessment 
 
 > **Snapshot note (models & dates):** The experiment described here was **conducted in November 2025**; this write-up was **revised June 2026**. All model versions, quality scores, and cost figures are a **November-2025 snapshot**. Frontier models move quickly — these numbers describe how *those* models behaved on *that* date, not the current state of the art. Reproducing the experiment with current models would be expected to change the results.
 
+## 🆕 Grounded WGI v4 — parametric vs. source-first (2026-07)
+
+A second experiment now lives alongside the multi-model comparison: **the same model
+family writing the same Working Group I volume two ways.**
+
+- **Parametric (1st edition):** the model wrote from internal knowledge; citations were
+  never checked against real literature.
+- **Grounded / source-first (2nd revised edition):** research first — a verified database
+  of **1,506 real DOI-bearing works** was harvested from OpenAlex, the model was
+  constrained to cite only from per-chapter top-80 allowed lists, and **every citation was
+  machine-verified** as a build gate. Across all 10 chapters (128,683 words):
+  **0 unverifiable citations, 0 unknown DOIs.**
+
+Full pipeline, per-chapter source databases, all grounded drafts, the compiled 351-page
+PDF, methodology, and rights are in **[`grounded_wgi_v4/`](grounded_wgi_v4/)**
+(start with [METHODOLOGY.md](grounded_wgi_v4/METHODOLOGY.md)). **Please pick this up and
+compare it** — the repository contents are CC BY-NC 4.0 (see
+[grounded_wgi_v4/COPYRIGHT.md](grounded_wgi_v4/COPYRIGHT.md)).
+
+---
+
 ## Overview
 
 These scripts generate complete drafts written **in the style of** an IPCC AR7 Working Group II climate-assessment report (29 chapters, ~330K words) using seven different AI models, then carry out a fact-checking loop, quality scoring, and multi-model comparison. Model parameters and prompts are fully documented and customizable.
